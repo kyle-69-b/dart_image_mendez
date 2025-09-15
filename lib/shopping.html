@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopping Cart</title>
+</head>
+
+<body>
+    <script>
+
+//part 1
+
+// Task 1
+function welcomeMessage() {
+    console.log("Welcome to the Shopping Cart!");
+}
+
+// Task 2
+function showCartCount() {
+    let apples = 3;
+    let bananas = 5;
+    let total = apples + bananas;
+    console.log("Total items in cart:", total);
+}
+
+// Task 3 – Call both functions
+welcomeMessage();
+showCartCount();
+
+
+
+// Part 2 
+
+
+// Task 1 + 3 (default parameter)
+function addItem(item = "Unknown Item", quantity) {
+    console.log(`Added ${quantity} ${item}(s) to the cart.`);
+}
+
+// Task 2 – Call with arguments
+addItem("Apple", 2);
+addItem("Banana", 5);
+addItem(); 
+
+
+
+// Part 3 
+
+
+// Task 1
+function calculateDiscount(price) {
+    return price - (price * 0.2); // 20% discount
+}
+
+// Task 2
+let discountedPrice = calculateDiscount(100);
+console.log("Discounted Price:", discountedPrice);
+
+// Task 3
+function isFreeShipping(total) {
+    if (total > 30) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Task 4 – Test with totals
+console.log("Free Shipping on 60?", isFreeShipping(60)); // true
+console.log("Free Shipping on 30?", isFreeShipping(30)); // false
+
+
+
+// Part 4 
+
+
+// Task 1
+function multiplyPrice(price, qty) {
+    return price * qty;
+}
+
+// Task 2
+function checkout(price, qty) {
+    let subtotal = multiplyPrice(price, qty);
+    let tax = subtotal * 0.08; // 8% tax
+    return subtotal + tax;
+}
+
+// Task 3
+console.log("Checkout Total:", checkout(20, 3));
+
+
+
+// Part 5 – Scope Practice
+
+
+// Task 1
+let storeName = "FreshMart";
+
+// Task 2
+function printStore() {
+    console.log("Store Name:", storeName); // global variable
+    let section = "Produce"; // local variable
+    console.log("Section:", section);
+}
+
+printStore();
+
+// Task 3
+
+// Part 6 – Variable Hoisting
+
+
+console.log("Before declaration:", cartItem); // undefined (hoisted)
+var cartItem = "Gatas"; 
+console.log("After declaration:", cartItem);
+
+
+    </script>
+</body>
+</html>
